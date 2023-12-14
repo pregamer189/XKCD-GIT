@@ -1,0 +1,53 @@
+body { /* hela sidans utseende */
+    margin: 0;
+    padding: 0;
+    background-color: #cdcbcb; /* Sätter en svag backgrundsfärg */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#mainComic { /* Gör så att comicen blir centrerad */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#navComic ul { /* Knapparna, listan i html */
+    list-style-type: none; /* tar bort punkterna */
+    padding: 0;
+    display: flex; /*gör så att knapparna är horisontella */
+    justify-content: center;
+}
+
+#navComic li { /* Knapparna, också lista i html */
+    display: inline-block; /* gör så att knapparna är horisontella */
+}
+
+#navComic button { /* Knapparna */
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #868282;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s; /* Sätter en animation så att det tar lite längre tid */
+    cursor: pointer;
+}
+
+#navComic button:hover {
+    background-color: #555555; /* Mörkare grå när musen är på knappen */
+}
+
+figure {
+    width: fit-content; /* Gör så at texten endast är lika stor som bilden */
+    text-align: center; /* Centrerar texten */
+}
+
+figure figcaption {
+    word-wrap: break-word; /* Gör så att bild texten bryts, så att den kan sitta rätt under bilden */
+}
