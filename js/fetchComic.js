@@ -24,7 +24,7 @@ window.onload = function() {
 
     prev.onclick = function() {
         if (currentComic > 1){ //tillåter ej prev kappen att gå under 1
-            currentComic--;
+            currentComic--; //Tar bort 1 från currentComic
             getComic(currentComic.toString());
     }
 }
@@ -37,12 +37,18 @@ window.onload = function() {
 
 
     next.onclick = function() {
-        currentComic++;
+        if (currentComic == maxComic){ //tillåter ej next knappen att gå över maxComic
+            return; //Gör så att kodan slutar köras, vilket förhindrar onödigt laddande
+        }
+        currentComic++; //Lägger till 1 till currentComic
         getComic(currentComic.toString());
     }
 
 
     last.onclick = function() {
+        if (currentComic == maxComic){ //tillåter ej last knappen att gå över maxComic
+            return; //Gör så att kodan slutar köras, vilket förhindrar onödigt laddande
+        }
         currentComic = maxComic; //ger "last" knappen värdet av maxComic
         getComic(currentComic.toString());
     }
