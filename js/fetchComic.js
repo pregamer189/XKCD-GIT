@@ -5,8 +5,6 @@ window.onload = function() {
     
     getComic('latest'); //hämtar senaste comicen
 
-    getComic('currentComic'); //hämtar den aktuella comicen
-
         //skapar en variabel för varje knapp, från HTML:en
     let first = document.getElementById('first');
     let prev = document.getElementById('prev');
@@ -69,6 +67,7 @@ function getComic(which) {
     .then(function(data) { //tar fram den senaste comicen
         if (which === 'latest') {
             maxComic = data.num;
+            currentComic = maxComic;
         }
         appendComic(data); 
     })
@@ -96,7 +95,6 @@ function appendComic(data) {
     }
 
     figure.appendChild(img);
-    mainComic.appendChild(figure);
 
     let captionText = document.createElement('figcaption'); //tar fram texten för comicen
     captionText.innerHTML = data.alt;
@@ -106,8 +104,9 @@ function appendComic(data) {
     caption.innerHTML = data.num;
     figure.appendChild(caption);
 
+    mainComic.appendChild(figure);
   
-    
+    console.log(data);
 
   
 
@@ -116,7 +115,7 @@ function appendComic(data) {
     /*
     title
     datum skapad med ett js date object
-    HTML figure element med img och caption, cation ska innehålla num för serien
+    HTML figure element med img och caption, caption ska innehålla num för serien
     */
     
 }
